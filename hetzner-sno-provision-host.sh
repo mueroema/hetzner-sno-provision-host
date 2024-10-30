@@ -19,7 +19,7 @@ echo kexec-tools kexec-tools/load_kexec select true | debconf-set-selections
 
 INITRD_URL="$(awk '/^initrd/{print $NF}' discovery_ipxe_script.txt | sed 's/http:/https:/')"
 KERNEL_URL="$(awk '/^kernel/{print $2}' discovery_ipxe_script.txt | sed 's/http:/https:/')"
-KERNEL_CMDLINE="$(grep '^kernel' discovery_ipxe_script.txt  | cut -d' ' -f 3-) | sed 's/http:/https:/')"
+KERNEL_CMDLINE="$(grep '^kernel' discovery_ipxe_script.txt  | cut -d' ' -f 3-)"
 
 echo "KERNEL_URL[${KERNEL_URL}]"
 echo "INITRD_URL[${INITRD_URL}]"
