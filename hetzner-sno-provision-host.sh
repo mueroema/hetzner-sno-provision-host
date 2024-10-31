@@ -15,7 +15,7 @@ echo 'This script is meant to be run in the rescue environment to provision the 
 echo kexec-tools kexec-tools/use_grub_config select false | debconf-set-selections
 echo kexec-tools kexec-tools/load_kexec select true | debconf-set-selections
 
-#apt-get install -y kexec-tools
+apt-get install -y kexec-tools
 
 INITRD_URL="$(awk '/^initrd/{print $NF}' discovery_ipxe_script.txt | sed 's/http:/https:/')"
 KERNEL_URL="$(awk '/^kernel/{print $2}' discovery_ipxe_script.txt | sed 's/http:/https:/')"
