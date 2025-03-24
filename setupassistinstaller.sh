@@ -1,0 +1,2 @@
+for i in 1 2 3; do echo "virtmaster0$i.muellma.de:";ssh root@virtmaster0$i.muellma.de -y -- wget https://raw.githubusercontent.com/mueroema/hetzner-sno-provision-host/refs/heads/main/hetzner-sno-provision-host.sh ; done
+for i in 1 2 3; do echo "virtmaster0$i.muellma.de:";ssh root@virtmaster0$i.muellma.de -y -- chmod +x hetzner-sno-provision-host.sh ; done
