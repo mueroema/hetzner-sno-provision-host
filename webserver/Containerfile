@@ -1,0 +1,9 @@
+FROM scratch
+#FROM registry.fedoraproject.org/fedora 
+ADD simple-http-server /local/
+ADD index.htm /www/
+EXPOSE 8080
+WORKDIR /www
+USER 1000
+#ENTRYPOINT [ "/local/simple-http-server","-i","-p","8080" ]
+ENTRYPOINT [ "/local/simple-http-server","-p","8080" ]
