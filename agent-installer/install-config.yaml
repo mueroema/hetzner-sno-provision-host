@@ -1,0 +1,32 @@
+additionalTrustBundlePolicy: Proxyonly
+apiVersion: v1
+baseDomain: muellma.de
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform: {}
+  replicas: 0
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform: {}
+  replicas: 1
+metadata:
+  creationTimestamp: null
+  name: sno
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 24
+  machineNetwork:
+  - cidr: 10.0.0.0/16
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+publish: External
+pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"","email":"marimuel@redhat.com"},"quay.io":{"auth":","email":"marimuel@redhat.com"}}}'
+sshKey: HetznerServerKey

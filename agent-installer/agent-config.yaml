@@ -1,0 +1,34 @@
+apiVersion: v1alpha1
+kind: AgentConfig
+metadata:
+  name: sno-cluster
+#If a value is not specified for the rendezvousIP field, one address will be chosen from the static IP addresses specified in the networkConfig fields.  
+#rendezvousIP: 192.168.111.80 1
+hosts:
+  - hostname: master-0
+    interfaces:
+      - name: eno1
+        macAddress: 90:1b:0e:bd:f3:6e
+    networkConfig:
+      interfaces:
+        - name: eno1
+          type: ethernet
+          state: up
+          mac-address: 90:1b:0e:bd:f3:6e
+          ipv4:
+            enabled: true
+            address:
+              - ip: 88.99.94.57
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 185.12.64.1
+            - 185.12.64.2
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 88.99.94.1
+            next-hop-interface: eno1
+            table-id: 254

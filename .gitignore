@@ -2,3 +2,5 @@ discovery_ipxe_script.txt
 initrd
 kernel
 *.yml
+*.iso
+agent-installer/setup
