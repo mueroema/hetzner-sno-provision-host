@@ -22,19 +22,19 @@ Usage
 Where:
 - `<iPXE script URL>` is the download URL for the iPXE script provided by assisted installer.
 
-# Verwendung von Agent Installer
-## ipxe Files erstellen mit Agent Installer
+## Verwendung von Agent Installer
+### ipxe Files erstellen mit Agent Installer
 ```
 /tmp/openshift-install --dir setuppxe/ agent create pxe-files
 ```
-## Auf den webserver packen und von dort zum download:
+### Auf den webserver packen und von dort zum download:
 ```
 wget -O agent.x86_64-vmlinuz http://server04.muellma.de:8543/agent.x86_64-vmlinuz
 wget -O agent.x86_64-initrd.img http://server04.muellma.de:8543/agent.x86_64-initrd.img
 wget -O agent.x86_64-rootfs.img http://server04.muellma.de:8543/agent.x86_64-rootfs.img
 
 ```
-## kexec installieren - das ändert das Bootmanagement
+### kexec installieren - das ändert das Bootmanagement
 ```
 echo kexec-tools kexec-tools/use_grub_config select false | debconf-set-selections
 echo kexec-tools kexec-tools/load_kexec select true | debconf-set-selections
@@ -42,10 +42,12 @@ apt-get install -y kexec-tools
 ```
 
 ### oder direct in das Rescue System
-## von dort dann starten:
+von dort dann starten:
 ```
 kexec agent.x86_64-vmlinuz --initrd=agent.x86_64-initrd.img --command-line="initrd=initrd coreos.live.rootfs_url=http://server04.muellma.de:8543/agent.x86_64-rootfs.img rw ignition.firstboot ignition.platform.id=metal" 
 ```
+
+#### Output Monitoring von Installationshost
 ```
 /tmp/openshift-install --dir setuppxe/ agent wait-for bootstrap-complete --log-level=info
 INFO Waiting for cluster install to initialize. Sleeping for 30 seconds 
