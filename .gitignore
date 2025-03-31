@@ -3,4 +3,6 @@ initrd
 kernel
 *.yml
 *.iso
+*.tar.gz
 agent-installer/setup
+agent-installer/setuppxe
