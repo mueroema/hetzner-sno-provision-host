@@ -6,3 +6,4 @@ kernel
 *.tar.gz
 agent-installer/setup
 agent-installer/setuppxe
+add-nodes/pxefiles

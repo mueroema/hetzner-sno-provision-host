@@ -1,0 +1,22 @@
+hosts:
+  - hostname: master-1
+    interfaces:
+      - name: eno1
+        macAddress: 90:1b:0e:e1:83:b1
+    networkConfig:
+      interfaces:
+        - name: eno1
+          type: ethernet
+          state: up
+          mac-address: 90:1b:0e:e1:83:b1
+          ipv4:
+            enabled: true
+            address:
+              - ip: 94.130.39.101
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 185.12.64.1
+            - 185.12.64.2
