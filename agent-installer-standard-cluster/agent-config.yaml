@@ -1,16 +1,22 @@
 apiVersion: v1alpha1
 kind: AgentConfig
 metadata:
-  name: sno-cluster
+  name: agent-cluster
 #If a value is not specified for the rendezvousIP field, one address will be chosen from the static IP addresses specified in the networkConfig fields.  
 #rendezvousIP: 192.168.111.80 1
 # to generate ipxe files:
 bootArtifactsBaseURL: http://server04.muellma.de:8543
+additionalNTPSources:
+  - ntp1.hetzner.de
+  - ntp2.hetzner.com
+  - ntp3.hetzner.net
 hosts:
-  - hostname: master-0
+  - hostname: server05.muellma.de
     interfaces:
       - name: eno1
         macAddress: 90:1b:0e:bd:f3:6e
+    rootDeviceHints:
+      deviceName: /dev/sda
     networkConfig:
       interfaces:
         - name: eno1
@@ -34,20 +40,22 @@ hosts:
             next-hop-address: 88.99.94.1
             next-hop-interface: eno1
             table-id: 254
-  - hostname: master-0
+  - hostname: server06.muellma.de
     interfaces:
       - name: eno1
-        macAddress: 90:1b:0e:bd:f3:6e
+        macAddress: 90:1b:0e:e1:83:b1
+    rootDeviceHints:
+      deviceName: /dev/sda
     networkConfig:
       interfaces:
         - name: eno1
           type: ethernet
           state: up
-          mac-address: 90:1b:0e:bd:f3:6e
+          mac-address: 90:1b:0e:e1:83:b1
           ipv4:
             enabled: true
             address:
-              - ip: 88.99.94.57
+              - ip: 94.130.39.101
                 prefix-length: 24
             dhcp: false
       dns-resolver:
@@ -58,6 +66,35 @@ hosts:
       routes:
         config:
           - destination: 0.0.0.0/0
-            next-hop-address: 88.99.94.1
+            next-hop-address: 94.130.39.65
+            next-hop-interface: eno1
+            table-id: 254
+  - hostname: server07.muellma.de
+    interfaces:
+      - name: eno1
+        macAddress: 90:1b:0e:b8:94:44
+    rootDeviceHints:
+      deviceName: /dev/sda
+    networkConfig:
+      interfaces:
+        - name: eno1
+          type: ethernet
+          state: up
+          mac-address: 90:1b:0e:b8:94:44
+          ipv4:
+            enabled: true
+            address:
+              - ip: 88.99.136.101
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 185.12.64.1
+            - 185.12.64.2
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 88.99.136.65
             next-hop-interface: eno1
             table-id: 254

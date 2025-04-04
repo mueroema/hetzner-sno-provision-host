@@ -1,0 +1,103 @@
+# https://github.com/openshift/installer/blob/main/docs/user/customization.md
+metadata:
+  name: agent
+additionalTrustBundle: |
+  -----BEGIN CERTIFICATE-----
+  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
+  7rrLoBP6owrY4JRRcZCwmHVku8J5DdFV
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  MIIF/zCCA+egAwIBAgIUHhOBoS5dLXI7PmVrqYzuGGzVLg0wDQYJKoZIhvcNAQEL
+  BQAwgYYxCzAJBgNVBAYTAkRFMRAwDgYDVQQIDAdHZXJtYW55MREwDwYDVQQHDAhD
+  aGVtbml0ejEQMA4GA1UECgwHTVVFTExNQTEmMCQGA1UECwwdTVVFTExNQSBDZXJ0
+  aWZpY2F0ZSBBdXRob3JpdHkxGDAWBgNVBAMMD01VRUxMTUEgUm9vdCBDQTAeFw0y
+  NDAxMjkxNTQ4MDFaFw00NDAxMjQxNTQ4MDFaMIGGMQswCQYDVQQGEwJERTEQMA4G
+  A1UECAwHR2VybWFueTERMA8GA1UEBwwIQ2hlbW5pdHoxEDAOBgNVBAoMB01VRUxM
+  TUExJjAkBgNVBAsMHU1VRUxMTUEgQ2VydGlmaWNhdGUgQXV0aG9yaXR5MRgwFgYD
+  VQQDDA9NVUVMTE1BIFJvb3QgQ0EwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIK
+  AoICAQDfJmkhiZs/NoJiwx7s6IwwCfpBdm+QRNU6j7nxpV3JJJeD7/l9fyIuMLMv
+  zB5f7YyRJEpY11npcvGTcs7C5PVtR48vJQaKoELh0Azgd0rMiC4zdom8D7AT+sa7
+  3np94IbBLsvkb2dk8/O0XQ7e4w8ZRnPbwPaGXEWo99Nf//yAzTlASpwUmo9GKAOG
+  FvICNZOkxBaLfx5PoKkAyO52wMai5YgCmM/FZqawNpHCJtg/VOCaB+pZG119UTlC
+  lVYJnrihQijPPv+Sl7M85xm5ujoZsyzf1y9w8S0sZkYJrmosW6mhTuqCmnme7iAz
+  I7fyX1J7JVu/H3paheBtszEVbSmW/3ooKpo8CYehzg+J7PxolI/57JQF/Z6+11I7
+  NDzL7I0G1ElWeZIumdIPpf16LL/9Cs5UIJJmPm1mresQjQGMGg42FMrfThI0Souy
+  KgasJDmTVIdEs4+kYB1XHx4WmkNmSqlBhokP+av2RgOfD522kVt3I7FI1EGnHdtu
+  AVVluSQDb9MO37cK4kljqHSzBlUi5l9Lrjj5g33D2hXucwSAMHSa1Yk1ik6IVZH1
+  ilMzcp0R6y0QF7Yl4QPJStOujGU55tvO03/eAJ1O/tfRyQlGfoRJ2xvFT9mOBn95
+  TT5Q4FGwvMCvg+wC7hyb6beYTXICVpKL0qUF7+hS2CAEUFqS5wIDAQABo2MwYTAd
+  BgNVHQ4EFgQUpD9LE/bMv5hRo8eB7wdAQH8Jz0gwHwYDVR0jBBgwFoAUpD9LE/bM
+  v5hRo8eB7wdAQH8Jz0gwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAYYw
+  DQYJKoZIhvcNAQELBQADggIBAFUwbzzjd2gmeqf/4SOBUTKdWr7wEandf15yRuVO
+  eqAAkRLt6SRU9vyb6O1Ojqp+Zrdo6s0gGIJFDZQBEKEnGcRqTSJo4qHJG0kX2JQ4
+  Yfq+7A6BqFFyanYn4AdoA7tz80b7DbZ+adiguY1ZPbAUS5Wlb1dNu6+UKs/mOHoJ
+  trJTSLqMduH9rFtWJNtFVzg+qwaRgwhuCjevZE7Gte7TKjJtVb4rcJbt8Zk/lhwc
+  I2ysgtg6GyW0FO4J5DsPbrOdQD6YTKwb3kTAxCpXYHlN5cO1xFl6kkX0dA+fgUC9
+  Fw8W8nbX6hBnputIN+KFjKpLD3bc/x5Acyn5i846kjh8obI/RaS9cVCGJ05WwwjI
+  uRaelTuH89bZBrTWe2xV/FiGIDsBNPfxS2Wgs3Uv5rJ1h081hj/OAZT/g/47MRGD
+  TDkb5xJNgxEiq41oa2qU5WCoSYvQJh6/sOWFLs9SJdqLXnMzLRqXdB3njCZGFlOT
+  +0LEvguxAu+Aq4j8vfKtowhVdOd1faeUGFrwErOMtN1P2ZA5IEeO1Of4Taj3yuLX
+  fkxDVh6mm98Kr00ckQpTEiFS+gdI/cdYU4co1am1yzyVucOzxizs03gi1o37oY1D
+  gLxz+PEzKnQ6fqEHBEyL5pxuCZCbJXSdBEGvXbe/cJ9tnPTi8jTvejvQSmb0S/CC
+  V5l3
+  -----END CERTIFICATE-----
+additionalTrustBundlePolicy: Always
+apiVersion: v1
+baseDomain: muellma.de
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform: {}
+  replicas: 0
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform: {}
+  # In three-node OpenShift Container Platform environments, the three control plane machines are schedulable, which means that your application workloads are scheduled to run on them.
+  replicas: 3
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 24
+  machineNetwork:
+  - cidr: 88.0.0.0/6
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+publish: External
+pullSecret: 'PLACEHOLDPULLSECRET'
+sshKey: 'PLACEHOLDSSHKEY'

@@ -7,3 +7,6 @@ kernel
 agent-installer/setup
 agent-installer/setuppxe
 add-nodes/pxefiles
+agent-installer-standard-cluster/setup
+**.*.log
+**.ign
