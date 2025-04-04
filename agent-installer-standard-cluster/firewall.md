@@ -1,5 +1,7 @@
 # Firewall Settings per node
 
+Bei der Installation deaktivieren - ansonsten siehe: https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/installation_configuration/configuring-firewall#network-flow-matrix_configuring-firewall
+
 Am besten das web Template und dann anpassen!
 
 | Name  | Version  | Protokoll  | Ziel-Port   | Aktion  |

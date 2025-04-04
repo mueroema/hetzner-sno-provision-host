@@ -53,5 +53,6 @@ for i in 5 6 7; do echo "server0$i.muellma.de:";scp ../hetzner-provision-hosts.s
 ## Debug Hints
 
 ```
+ssh core@server07.muellma.de sudo efibootmgr -n 0001
 sudo efibootmgr -B -b 0005
 ```
